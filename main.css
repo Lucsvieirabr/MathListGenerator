@@ -1,0 +1,41 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    padding: 20px;
+    color: cornflowerblue;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+a{
+    color: black;
+}
+#autor{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+#docLink{
+    margin-top: 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    outline: none;
+    border-radius: 10px;
+    height: 40px;
+    background-color: white;
+    border-color:  #306BFF
+}
+#docLink:hover{
+    cursor: pointer;
+    transition: ease-in-out 0.5s;
+    background-color: #4679fc;
+    color: white;
+}
+html{
+    background-color: white;
+    font-family: 'Roboto', sans-serif;  
+}
