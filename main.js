@@ -31,8 +31,10 @@ function generate_list_of_questions() {
     return list_of_questions;
 }
 function generate_Question_and_Answer() {
-    let n1 = generate_Number();
-    let n2 = generate_Number();
+    let n1 = Number(generate_Number());
+    let n2 = Number(generate_Number());
+    n1 = !Number.isInteger(n1) ? n1.toFixed(2): n1;
+    n2 = !Number.isInteger(n2) ? n2.toFixed(2): n2;
     let operation = operations[Math.floor(Math.random() * operations.length)];
     let question = n1 + " " + operation.symbol + " " + n2;
     let answer = operation.func(parseInt(n1), parseInt(n2));
@@ -45,7 +47,12 @@ function generate_Question_and_Answer() {
 function generate_Number() {
     let number = [];
     let nums_Of_Algorithms = Math.floor(Math.random() * ( max_nums_Of_Algorithms -1 ) + 2);
+    let isFloat = Math.random() < 0.3;
     for (let i = 0; i < nums_Of_Algorithms; i++) {
+        if(i + 1 == nums_Of_Algorithms && isFloat){
+            number.push(Math.random() * (9 - 1) + 1);
+            break
+        }
         if(i != 0) {
             number.push( Math.floor(Math.random() * (9 - 1) + 1));
         }
@@ -53,6 +60,7 @@ function generate_Number() {
             number.push( Math.floor(Math.random() * 9 + 1));
         }
     }
+    
     return number.join("");
 }
 function write_questions_on_doc(doc, questions){
