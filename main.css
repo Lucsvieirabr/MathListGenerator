@@ -35,6 +35,10 @@ a{
     background-color: #4679fc;
     color: white;
 }
+.fa-download:before {
+    content: "\f019";
+    margin-right: 5px;
+}
 html{
     background-color: white;
     font-family: 'Roboto', sans-serif;  
