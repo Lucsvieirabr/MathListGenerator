@@ -32,7 +32,7 @@ body{
 }
 
 .modal-content{
-    display: flex;
+    display: block;
     background-color: aliceblue;
     margin: 30vh; 
     padding: 5vh;
@@ -41,27 +41,39 @@ body{
 
 .modal-inputs{
     display: grid;
-    font-weight: bold;
     grid-template-columns: 1fr;
-    grid-gap: 0.5vh;
+    font-weight: bold;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align: left;
+    gap: 3.5vh;
 }
 .modal-title{
-    display: grid;
-    grid-template-columns: 1fr auto;
+    display: block;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-weight: bold;
-}
-span{
-    position: center;
     font-size: 3.5vh;
+    width: 100%;
+    border-bottom: 1px solid #306BFF;
+    margin-bottom: 3vh;
+}
+.close{
+    position: absolute;
+    font-size: 3.5vh;
+    font-weight: bold;
+    margin: 30vh;
+    margin-left: 62vh;
+    margin-top: 23vh; 
+    padding: 8vh;
+   
 }
 input, select{
     text-align: center;
+    border-radius: 5px;
+    border: 1px solid #306BFF;
+    outline: none;
 }
 
 .config{

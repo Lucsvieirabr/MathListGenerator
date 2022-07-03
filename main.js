@@ -1,5 +1,31 @@
 let max_nums_Of_Algorithms = 5;
 let number_of_questions = 50;
+let sel_op;
+window.onload = function(){
+    modal = document.getElementById('mymodal');
+    changeModal_state();
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        changeModal_state();
+    }
+}
+function changeModal_state(){
+    let display = modal.style.display;
+    if(display == 'none'){
+        modal.style.display = 'flex';
+        return
+    }
+    max_nums_Of_Algorithms = document.getElementById('maxAlg').value == "" ? 5 : document.getElementById('maxAlg').value;
+    if(max_nums_Of_Algorithms > 8){
+        max_nums_Of_Algorithms = 8;
+        alert("Max number of algorithms is 8, seted to 8");
+    }
+    sel_op = document.getElementById('operations').value;
+    modal.style.display = 'none';
+}
+
 let operations = [
     {
         name: "subtraction",
@@ -35,7 +61,7 @@ function generate_Question_and_Answer() {
     let n2 = Number(generate_Number());
     n1 = !Number.isInteger(n1) ? n1.toFixed(2): n1;
     n2 = !Number.isInteger(n2) ? n2.toFixed(2): n2;
-    let operation = operations[Math.floor(Math.random() * operations.length)];
+    let operation = operations.find(op => op.name == sel_op) || operations[Math.floor(Math.random() * operations.length)];
     let question = n1 + " " + operation.symbol + " " + n2;
     let answer = operation.func(parseInt(n1), parseInt(n2));
     if(!Number.isInteger(answer)){

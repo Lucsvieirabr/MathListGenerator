@@ -15,25 +15,24 @@
         <h1>Basic Operations List Generator</h1>
         <a id="autor" href="https://github.com/Lucsvieirabr">By Lucas Vieira da Silva</a>
         <div class="config">
-            <i id="configicon"class="fa fa-cog" aria-hidden="true" onClick="set_active_modal"></i>
+            <i id="configicon"class="fa fa-cog" aria-hidden="true" onClick="changeModal_state()"></i>
         </div>
-        <div class="modal">
+        <div id="mymodal"class="modal">
+            <span class="close" onClick="changeModal_state()">&times;</span>
             <div class="modal-content">
+                <div class="modal-title">
+                    <header>Configurations</header>
+                </div>
                 <div class="modal-inputs">
-                    <div class="modal-title">
-                        <h3>Configurations</h3>
-                        <span class="close">&times;</span>
-                    </div>
                     <label for="nome">Operations</label>
-                    <select name="operations" id="operations">
+                    <select name="operations" id="operations" >
                         <option value="all">All</option>
-                        <option value="-">Subtraction</option>
-                        <option value="+">Addition</option>
-                        <option value="*">Multiplication</option>
-                        <option value="/">Division</option>
+                        <option value="subtraction">Subtraction</option>
+                        <option value="addition">Addition</option>
+                        <option value="multiplication">Multiplication</option>
+                        <option value="division">Division</option>
                     </select>
                     <label for="nome">Number of Algorithms</label>
-                    <input type="number" id="minAlg" placeholder="Min Algorithms">
                     <input type="number" id="maxAlg" placeholder="Max Algorithms">
                 </div>
             </div>
